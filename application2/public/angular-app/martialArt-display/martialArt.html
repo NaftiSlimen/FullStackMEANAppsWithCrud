@@ -1,0 +1,51 @@
+
+<H1 class="bigTitle"> Informations about <span class="mainTitle">{{MADisplayController.martialArt.name}}</span>
+<BR/>
+<BR/>
+</H1>
+<p style="font-size:1vw">
+    <span class="normalTitle">Origin: </span>{{MADisplayController.martialArt.origin|uppercase}}<BR />
+    <span class="normalTitle">Invention date: </span>{{MADisplayController.martialArt.inventionDate}}<BR />
+    <span class="normalTitle">Caracteristics: </span>
+    <ul  style="font-size:1vw">
+        <li>
+            <span class="tinyTitle">Usage of weapons: </span>{{MADisplayController.martialArt.caracteristics.weapons| uppercase}}</BR>
+        </li>
+        <li>
+            <span class="tinyTitle">Description: </span>{{MADisplayController.martialArt.caracteristics.description}}</BR>
+        </li>
+        <li>
+            <span class="tinyTitle">Self defense efficiency: </span>{{MADisplayController.martialArt.caracteristics.selfDefenseEfficiency }}</BR>
+        </li>
+        <li>
+            <span class="tinyTitle">Danger on opponent: </span>{{MADisplayController.martialArt.caracteristics.dangerOnOpponent}}</BR>
+        </li>
+    </ul>
+    <div class="normalTitle">Hall of fame:</div>
+    <ul style="font-size:1vw">
+       
+        <li  ng-repeat="martialArt  in MADisplayController.martialArt.hallOfFame"><span class="tinyTitle">{{martialArt.fullName}}</span>
+            <ul>
+                
+                <li>
+                    <span class="extratinyTitle">Country of origin: </span>{{martialArt.countryOfOrigin|uppercase}}
+                </li>
+                <li>
+                    <div class="extratinyTitle">Trophies: </div>
+                    <ul>
+                        <li ng-repeat="hey  in martialArt.trophies">{{hey.description}}</li> 
+                    </ul>
+                    
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <BR />
+    <BR />
+    <BR />
+    <BR />
+    <BR />
+    <BR />
+    <BR />
+
+    </p>
