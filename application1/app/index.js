@@ -2,6 +2,7 @@ require("./api/data/db.js");
 var express=require("express");
 var app=express();
 const path=require("path");
+app.use(express.urlencoded({extended  : false}));
 app.use(express.json());
 app.use("/node_modules", express.static(path.join(__dirname, "node_modules")));
 
