@@ -5,33 +5,46 @@
 </br>
 
 <ul class="tinyTitle">
-    <li ng-repeat="mart  in MAController.martialArts" ><a ng-href={{"http://localhost:5000/#/martialart/"+mart._id}}>{{mart.name}}</a></li>
+    <li ng-repeat="mart  in MAController.martialArts" ><a ng-href={{"http://localhost:5000/#/martialarts/"+mart._id}}>{{mart.name}}</a></li>
 </ul>
 
-<form name="vm.gameForm" ng-submit="vm.addGame()" >
+<form name="MAController.addMaForm" ng-submit="MAController.addMartialArt()" >
 
     To add a new martial art please fill in all the fields below:<BR/>
 
-    Name: <input type="text" name="title" required ng-model="vm.newGameTitle" style="color:black"/><BR/>
+    Name: <input type="text" name="title" required ng-model="MAController.maname" style="color:black"/><BR/>
 
-    Origin: <input type="text" name="price" required ng-model="vm.newGamePrice" style="color:black"/><BR/>
+    Origin: <input type="text" name="price" required ng-model="MAController.maorigin" style="color:black"/><BR/>
 
-    Invention Date: <input type="text" name="year" required ng-model="vm.newGameYear" style="color:black"/><BR/>
+    Invention Date: <input type="number" name="year" required ng-model="MAController.mainventionDate" style="color:black"/><BR/>
 
-    Desription: <input type="text" name="rating" required ng-model="vm.newGameRating" style="color:black"/><BR/>
+    <div>CAracteristics:</div>
 
-    Self defense effiiency: <input type="text" name="minPlayers" required ng-model="vm.newGameMinPlayers" style="color:black"/>
+    Desription: <input type="text" name="rating" required ng-model="MAController.maDescription" style="color:black"/><BR/>
 
-    <span ng-show="vm.gameForm.minPlayers.$dirty && vm.gameForm.minPlayers.$invalid && vm.gameForm.isSubmitted" style="color:black">Minimum players must be at least 1.</span>
+    Usage of weapons: <select required ng-model="MAController.maWeapons" style="color:black" name="weapons" id="cars">
+        <option value="without">without</option>
+        <option value="with">with</option>
+      </select>
+    
+    
+    
+    <!-- <input type="text" name="rating" required ng-model="MAController.maWeapons" style="color:black"/><BR/> -->
+    <BR/>
+    Self defense efficiency: <input type="number" name="minPlayers" required ng-model="MAController.maselfDefEff" min=1 max=10 style="color:black"/>
 
     <BR/>
 
-    Danger on opponent: <input type="text" name="maxPlayers" required ng-model="vm.newGameMaxPlayers" style="color:black"/><BR/>
+    Danger on opponent: <input type="number" name="maxPlayers" required ng-model="MAController.maDangerOpp" min=1 max=10 style="color:black"/><BR/>
 
-    Minimum Recommended Player Age: <input type="text" name="minAge" required ng-model="vm.newGameMinAge" style="color:black"/><BR/>
+    <div>Hall  of fame:</div>
+    
+    Name: <input type="text" name="minAge" required ng-model="MAController.maHofName" style="color:black"/><BR/>
 
-    Designer name: <input type="text" name="designer" required ng-model="vm.newGameDesigner" style="color:black"/><BR/>
+    Origin: <input type="text" name="designer" required ng-model="MAController.maHofOrigin" style="color:black"/><BR/>
 
-    <button type="submit" class="btn-success">Add Game</button><BR/>
+    Trophies: <input type="text" name="designer" required ng-model="MAController.maHoftrophies" style="color:black"/><BR/>
+
+    <button type="submit" class="btn-success">Add Martial art</button><BR/>
 
 </form>

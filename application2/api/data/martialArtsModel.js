@@ -36,3 +36,5 @@ const martialArtSchema=new mongoose.Schema({
 });
 
 mongoose.model("martialArts", martialArtSchema, "marts");
+
+

@@ -3,10 +3,10 @@ console.log("hi");
 
 function config($routeProvider,$locationProvider)  {
    $locationProvider.hashPrefix("");
-    $routeProvider.when("/martialart",  {
+    $routeProvider.when("/martialarts",  {
         templateUrl:  "angular-app/martialArt-list/martialArts.html",
         controller:"MAController",
-        controllerAs:  "MAController"}).when("/martialart/:id", {
+        controllerAs:  "MAController"}).when("/martialarts/:id", {
             templateUrl:  "angular-app/martialArt-display/martialArt.html",
             controller: "MADisplayController",
             controllerAs:  "MADisplayController"});};
